@@ -89,26 +89,31 @@ export function Magazine() {
           <motion.div
             key={index}
             custom={dir}
-            initial={(d: number) => ({
-              rotateY: d > 0 ? 82 : -82,
-              x: d > 0 ? "40%" : "-40%",
-              opacity: 0,
-              filter: "brightness(0.4)",
-            })}
-            animate={{
-              rotateY: 0,
-              x: 0,
-              opacity: 1,
-              filter: "brightness(1)",
-              transition: { duration: 0.85, ease: [0.22, 0.9, 0.28, 1] },
+            variants={{
+              enter: (d: number) => ({
+                rotateY: d > 0 ? 82 : -82,
+                x: d > 0 ? "40%" : "-40%",
+                opacity: 0,
+                filter: "brightness(0.4)",
+              }),
+              center: {
+                rotateY: 0,
+                x: 0,
+                opacity: 1,
+                filter: "brightness(1)",
+                transition: { duration: 0.85, ease: [0.22, 0.9, 0.28, 1] as const },
+              },
+              exit: (d: number) => ({
+                rotateY: d > 0 ? -82 : 82,
+                x: d > 0 ? "-40%" : "40%",
+                opacity: 0,
+                filter: "brightness(0.3)",
+                transition: { duration: 0.85, ease: [0.7, 0, 0.3, 1] as const },
+              }),
             }}
-            exit={(d: number) => ({
-              rotateY: d > 0 ? -82 : 82,
-              x: d > 0 ? "-40%" : "40%",
-              opacity: 0,
-              filter: "brightness(0.3)",
-              transition: { duration: 0.85, ease: [0.7, 0, 0.3, 1] },
-            })}
+            initial="enter"
+            animate="center"
+            exit="exit"
             className="absolute inset-0 origin-center paper-shadow"
             style={{
               transformStyle: "preserve-3d",
