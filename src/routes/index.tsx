@@ -1,24 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Magazine } from "@/components/Magazine";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Hackers In Threat Hunt — Classified Cyber Intelligence Dossier" },
+      {
+        name: "description",
+        content:
+          "Turn the pages of a top-secret editorial exhibit on elite threat hunting, penetration testing, SOC operations, digital forensics, incident response, and the Viranetra AI defense platform.",
+      },
+      { property: "og:title", content: "Hackers In Threat Hunt — Vol. 01" },
+      {
+        property: "og:description",
+        content:
+          "An immersive editorial dossier of modern cyber defense. Hunt threats before they become breaches.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <Magazine />;
 }
