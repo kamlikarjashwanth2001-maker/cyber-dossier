@@ -15,6 +15,8 @@ import { Page08CloudSecurity } from "./Page08CloudSecurity";
 import { Page09AppSec } from "./Page09AppSec";
 import { Page12Consulting } from "./Page12Consulting";
 import { Page14Founders } from "./Page14Founders";
+import { Page15Gallery } from "./Page15Gallery";
+import { Page16Blog } from "./Page16Blog";
 
 export const pages: { title: string; component: ComponentType<{ goToIndex?: (i: number) => void }> }[] = [
   { title: "Cover", component: Page01Cover },
@@ -31,5 +33,7 @@ export const pages: { title: string; component: ComponentType<{ goToIndex?: (i: 
   { title: "Viranetra Platform", component: Page09Viranetra },
   { title: "Editor's Note", component: Page02Editor },
   { title: "Founders", component: Page14Founders },
+  { title: "Gallery", component: Page15Gallery },
+  { title: "Cyber Updates", component: Page16Blog },
   { title: "Closing Spread", component: Page10Closing },
 ];
