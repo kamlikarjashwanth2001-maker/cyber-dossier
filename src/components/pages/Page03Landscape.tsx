@@ -54,7 +54,7 @@ export function Page03Landscape() {
 
       <div className="relative z-10 h-full grid grid-rows-[auto_1fr_auto] p-8 md:p-16">
         <div className="mono text-[10px] uppercase tracking-[0.35em] text-cyan">
-          <div>03 — Field Study</div>
+          <div>02 — Field Study</div>
           <div className="text-paper/50 mt-1">The Modern Threat Landscape</div>
         </div>
 

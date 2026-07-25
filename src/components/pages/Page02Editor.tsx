@@ -24,7 +24,7 @@ export function Page02Editor() {
         {/* Left column */}
         <div className="md:col-span-7 flex flex-col justify-between">
           <div className="mono text-[10px] uppercase tracking-[0.35em] text-cyan">
-            <div>02 — Editor's Note</div>
+            <div>03 — Editor's Note</div>
             <div className="text-paper/40 mt-1">From the Desk of the Chief Threat Analyst</div>
           </div>
 

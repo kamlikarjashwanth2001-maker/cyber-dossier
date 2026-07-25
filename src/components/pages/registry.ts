@@ -12,8 +12,8 @@ import { Page10Closing } from "./Page10Closing";
 
 export const pages: { title: string; component: ComponentType }[] = [
   { title: "Cover", component: Page01Cover },
-  { title: "Editor's Note", component: Page02Editor },
   { title: "Threat Landscape", component: Page03Landscape },
+  { title: "Editor's Note", component: Page02Editor },
   { title: "Threat Hunting", component: Page04Hunting },
   { title: "Penetration Testing", component: Page05Pentest },
   { title: "SOC Operations", component: Page06SOC },
