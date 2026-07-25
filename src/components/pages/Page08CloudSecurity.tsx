@@ -1,13 +1,6 @@
 import { motion } from "framer-motion";
 import cloudImg from "@/assets/p11-cloud.jpg";
 
-const PROCESS = [
-  { n: "01", t: "POSTURE", d: "Assess and harden IAM, network, and storage configurations." },
-  { n: "02", t: "COMPUTE", d: "Secure serverless functions and Kubernetes clusters." },
-  { n: "03", t: "DETECT", d: "Monitor control plane logs (CloudTrail, Azure Monitor)." },
-  { n: "04", t: "RESPOND", d: "Automate containment of compromised cloud identities." },
-];
-
 export function Page08CloudSecurity({ goToIndex }: { goToIndex?: (i: number) => void }) {
   return (
     <div className="relative w-full h-full bg-ink overflow-hidden">
@@ -72,16 +65,16 @@ export function Page08CloudSecurity({ goToIndex }: { goToIndex?: (i: number) => 
         ))}
       </svg>
 
-      <div className="relative z-10 w-full h-full flex items-center justify-end p-8 md:p-16">
-        {/* Floating frosted glass panel on the right */}
+      <div className="relative z-10 w-full h-full flex items-center justify-end p-8 md:p-16 pointer-events-none">
+        {/* Floating frosted glass panel on the right - Made scrollable for extra content */}
         <motion.div 
           initial={{ x: 50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="w-full max-w-2xl bg-void/80 backdrop-blur-md border border-cyan/20 p-8 md:p-12 shadow-[0_0_50px_rgba(0,216,255,0.05)]"
+          className="w-full max-w-2xl h-full max-h-[85vh] overflow-y-auto custom-scrollbar bg-void/85 backdrop-blur-xl border border-cyan/20 p-8 md:p-12 shadow-[0_0_50px_rgba(0,216,255,0.05)] pointer-events-auto"
         >
-          <div className="flex justify-between items-start mb-6">
+          <div className="flex justify-between items-start mb-6 sticky top-0 bg-void/90 backdrop-blur-md pt-2 pb-4 z-20 border-b border-line/30 -mt-4 mb-8">
             <div className="mono text-[10px] uppercase tracking-[0.35em] text-cyan">
               08 — Discipline
             </div>
@@ -96,36 +89,76 @@ export function Page08CloudSecurity({ goToIndex }: { goToIndex?: (i: number) => 
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="display text-4xl md:text-6xl leading-[1.1] font-semibold mb-6"
+            className="display text-4xl md:text-5xl leading-[1.1] font-semibold mb-2"
           >
             Cloud<br />
             <span className="text-cyan">Security.</span>
           </motion.h2>
 
-          <p className="max-w-md text-paper/70 text-sm leading-relaxed mb-8">
-            The cloud is someone else's computer, but the risk is entirely yours. We secure AWS, Azure, and GCP architectures from misconfiguration and lateral movement.
+          <p className="mono text-[10px] text-cyan uppercase tracking-[0.2em] mb-8">
+            Secure your multi-cloud infrastructure and cloud-native apps.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-            {PROCESS.map((p, i) => (
-              <motion.div
-                key={p.n}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + i * 0.1 }}
-                className="border-l-2 border-cyan/40 pl-4 py-1"
-              >
-                <div className="flex items-baseline gap-2 mb-1">
-                  <span className="mono text-[9px] text-cyan">{p.n}</span>
-                  <span className="display font-semibold text-sm tracking-wide">{p.t}</span>
-                </div>
-                <div className="mono text-[9px] text-paper/50 leading-relaxed">{p.d}</div>
-              </motion.div>
-            ))}
+          <div className="mb-10">
+            <h3 className="display text-lg font-semibold text-paper mb-3 border-l-2 border-cyan pl-3">Overview</h3>
+            <p className="text-paper/70 text-sm leading-relaxed">
+              Misconfigurations are the leading cause of cloud breaches. We analyze your AWS, Azure, GCP, and Kubernetes deployments to ensure proper IAM governance, network segmentation, and adherence to cloud security benchmarks.
+            </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between mt-auto pt-6 border-t border-line/30">
+          <div className="mb-10">
+            <h3 className="display text-lg font-semibold text-paper mb-4 border-l-2 border-cyan pl-3">What's Included</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {[
+                "Cloud Security Posture Management (CSPM) implementation and tuning",
+                "Identity & Access Management (IAM) privilege auditing (CIEM)",
+                "Kubernetes and container security orchestration reviews",
+                "Infrastructure as Code (IaC) security scanning and guardrails",
+                "Cloud network architecture and egress filtering validation",
+                "Continuous compliance mapping (CIS Benchmarks, NIST)"
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3 bg-cyan/5 border border-cyan/10 p-3">
+                  <span className="text-cyan mt-0.5">✓</span>
+                  <span className="text-[11px] text-paper/80 leading-relaxed">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="display text-lg font-semibold text-paper mb-4 border-l-2 border-cyan pl-3">Key Deliverables</h3>
+            <ul className="flex flex-col gap-2">
+              {[
+                "Cloud configuration audit reports",
+                "IAM excess-privilege remediation plan",
+                "Kubernetes cluster security scorecards",
+                "Automated guardrail templates (Terraform, CloudFormation)",
+                "Real-time drift detection setup"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-cyan rounded-full" />
+                  <span className="text-sm text-paper/80">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="display text-lg font-semibold text-paper mb-4 border-l-2 border-cyan pl-3">Frequently Asked Questions</h3>
+            <div className="flex flex-col gap-3">
+              {[
+                { q: "Do you support multi-cloud environments?", a: "Yes, our team is proficient across AWS, Azure, and Google Cloud Platform, providing unified security strategies." },
+                { q: "How do you detect drift in cloud environments?", a: "We implement continuous monitoring tools and IaC guardrails that instantly alert on unauthorized configuration changes." }
+              ].map((faq, i) => (
+                 <div key={i} className="border border-line/30 p-4 bg-void">
+                    <div className="text-cyan text-sm font-semibold mb-2">Q: {faq.q}</div>
+                    <div className="text-paper/70 text-xs leading-relaxed">A: {faq.a}</div>
+                 </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between mt-8 pt-6 border-t border-line/30">
              <div className="flex flex-wrap gap-2 mono text-[8px] uppercase tracking-[0.2em] text-paper/60">
               {["AWS", "AZURE", "GCP", "CSPM", "KUBERNETES"].map((t) => (
                 <span key={t} className="px-2 py-1 bg-cyan/5 text-cyan/80">
