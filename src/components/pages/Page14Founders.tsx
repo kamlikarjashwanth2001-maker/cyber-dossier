@@ -40,8 +40,8 @@ export function Page14Founders({ goToIndex }: { goToIndex?: (i: number) => void 
             transition={{ delay: 0.1, duration: 0.8 }}
             className="display text-4xl md:text-6xl font-semibold mb-4 text-paper tracking-tight"
           >
-            Frontline Operators. <br/>
-            <span className="text-cyan">Not Boardroom Consultants.</span>
+            Architects of Defense. <br/>
+            <span className="text-cyan">Hunters of Threats.</span>
           </motion.h2>
 
           <motion.p
