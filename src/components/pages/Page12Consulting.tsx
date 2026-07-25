@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import dossier from "@/assets/p4-dossier.jpg";
+import consultingImg from "@/assets/p13-consulting.jpg";
 
 const PROCESS = [
   { n: "01", t: "ASSESS", d: "Comprehensive maturity modeling and gap analysis." },
@@ -18,7 +18,7 @@ export function Page12Consulting({ goToIndex }: { goToIndex?: (i: number) => voi
           </div>
         </div>
         <motion.img
-          src={dossier}
+          src={consultingImg}
           alt="Security Consulting Framework"
           width={1600}
           height={1800}

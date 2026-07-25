@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import analysts from "@/assets/p2-analysts.jpg";
+import appsecImg from "@/assets/p12-appsec.jpg";
 
 const PROCESS = [
   { n: "01", t: "REVIEW", d: "Deep manual code review targeting business logic flaws." },
@@ -13,7 +13,7 @@ export function Page09AppSec({ goToIndex }: { goToIndex?: (i: number) => void })
     <div className="relative w-full h-full bg-void overflow-hidden">
       <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2">
         <motion.img
-          src={analysts}
+          src={appsecImg}
           alt="Application Security Analysts"
           width={1600}
           height={1800}

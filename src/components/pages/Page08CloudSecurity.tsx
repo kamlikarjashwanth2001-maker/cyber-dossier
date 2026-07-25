@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import worldmap from "@/assets/p3-worldmap.jpg";
+import cloudImg from "@/assets/p11-cloud.jpg";
 
 const PROCESS = [
   { n: "01", t: "POSTURE", d: "Assess and harden IAM, network, and storage configurations." },
@@ -18,7 +18,7 @@ export function Page08CloudSecurity({ goToIndex }: { goToIndex?: (i: number) => 
           </div>
         </div>
         <motion.img
-          src={worldmap}
+          src={cloudImg}
           alt="Cloud Architecture Map"
           width={1600}
           height={1800}
