@@ -9,8 +9,8 @@ export function Page09Viranetra() {
       <div className="relative z-10 h-full grid grid-cols-1 md:grid-cols-12 p-8 md:p-14 gap-8">
         
         {/* Left Side Content */}
-        <div className="md:col-span-5 flex flex-col justify-center">
-          <div className="mono text-[10px] uppercase tracking-[0.35em] text-cyan mb-8">
+        <div className="md:col-span-5 flex flex-col justify-start pt-4 xl:pt-10">
+          <div className="mono text-[10px] uppercase tracking-[0.35em] text-cyan mb-6 xl:mb-8">
             09 — Platform Feature
           </div>
 
@@ -33,7 +33,7 @@ export function Page09Viranetra() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="w-full mt-10 bg-void/80 backdrop-blur-md border border-line/30 rounded-lg p-5 font-sans text-paper shadow-2xl relative overflow-hidden hidden md:block"
+            className="w-full mt-6 xl:mt-8 bg-void/80 backdrop-blur-md border border-line/30 rounded-lg p-4 xl:p-5 font-sans text-paper shadow-2xl relative overflow-hidden hidden md:block"
           >
             {/* Dashboard Header */}
             <div className="flex justify-between items-center border-b border-line/30 pb-3 mb-5">
