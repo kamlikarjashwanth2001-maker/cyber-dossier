@@ -39,7 +39,7 @@ export function Page09AppSec({ goToIndex }: { goToIndex?: (i: number) => void })
               Source code static analysis detecting a critical zero-day vulnerability.
             </div>
             {goToIndex && (
-              <button onClick={() => goToIndex(3)} className="mt-4 mono text-[10px] text-paper/50 hover:text-cyan uppercase tracking-[0.2em] transition-colors">
+              <button onClick={() => goToIndex(2)} className="mt-4 mono text-[10px] text-paper/50 hover:text-cyan uppercase tracking-[0.2em] transition-colors">
                 ← Back to Directory
               </button>
             )}

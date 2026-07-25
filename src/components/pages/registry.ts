@@ -18,7 +18,6 @@ import { Page12Consulting } from "./Page12Consulting";
 export const pages: { title: string; component: ComponentType<{ goToIndex?: (i: number) => void }> }[] = [
   { title: "Cover", component: Page01Cover },
   { title: "Threat Landscape", component: Page03Landscape },
-  { title: "Editor's Note", component: Page02Editor },
   { title: "Operations Directory", component: Page04ServicesHub },
   { title: "Threat Hunting", component: Page04Hunting },
   { title: "Penetration Testing", component: Page05Pentest },
@@ -29,5 +28,6 @@ export const pages: { title: string; component: ComponentType<{ goToIndex?: (i: 
   { title: "Incident Response", component: Page08Incident },
   { title: "Security Consulting", component: Page12Consulting },
   { title: "Viranetra Platform", component: Page09Viranetra },
+  { title: "Editor's Note", component: Page02Editor },
   { title: "Closing Spread", component: Page10Closing },
 ];

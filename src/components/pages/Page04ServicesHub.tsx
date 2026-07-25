@@ -5,49 +5,49 @@ export function Page04ServicesHub({ goToIndex }: { goToIndex?: (i: number) => vo
     {
       title: "Threat Hunting",
       desc: "Proactive, intelligence-driven operations mapped to MITRE ATT&CK.",
-      targetIndex: 4, // Will be index 4
+      targetIndex: 3,
       icon: "🎯"
     },
     {
       title: "Penetration Testing",
       desc: "Simulated real-world attacks to uncover vulnerabilities.",
-      targetIndex: 5,
+      targetIndex: 4,
       icon: "🛡️"
     },
     {
       title: "SOC as a Service",
       desc: "24/7/365 continuous monitoring, triage, and response.",
-      targetIndex: 6,
+      targetIndex: 5,
       icon: "👁️"
     },
     {
       title: "Cloud Security",
       desc: "Hardening and defending AWS, Azure, and GCP architectures.",
-      targetIndex: 7,
+      targetIndex: 6,
       icon: "☁️"
     },
     {
       title: "Application Security",
       desc: "Deep code review, SAST/DAST, and secure SDLC integration.",
-      targetIndex: 8,
+      targetIndex: 7,
       icon: "🔒"
     },
     {
       title: "Digital Forensics",
       desc: "Deep-dive evidence recovery and artifact analysis.",
-      targetIndex: 9,
+      targetIndex: 8,
       icon: "🔍"
     },
     {
       title: "Incident Response",
       desc: "Rapid containment, eradication, and recovery from active attacks.",
-      targetIndex: 10,
+      targetIndex: 9,
       icon: "⚡"
     },
     {
       title: "Security Consulting",
       desc: "vCISO, compliance (ISO 27001, SOC2), and strategic advisory.",
-      targetIndex: 11,
+      targetIndex: 10,
       icon: "📄"
     },
   ];

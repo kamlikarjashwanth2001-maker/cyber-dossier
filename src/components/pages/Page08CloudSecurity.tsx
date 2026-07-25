@@ -86,7 +86,7 @@ export function Page08CloudSecurity({ goToIndex }: { goToIndex?: (i: number) => 
               Global traffic map representing identity federation across multi-cloud environments.
             </div>
             {goToIndex && (
-              <button onClick={() => goToIndex(3)} className="mt-4 mono text-[10px] text-paper/50 hover:text-cyan uppercase tracking-[0.2em] transition-colors">
+              <button onClick={() => goToIndex(2)} className="mt-4 mono text-[10px] text-paper/50 hover:text-cyan uppercase tracking-[0.2em] transition-colors">
                 ← Back to Directory
               </button>
             )}

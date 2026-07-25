@@ -86,7 +86,7 @@ export function Page12Consulting({ goToIndex }: { goToIndex?: (i: number) => voi
               Executive risk quantification matrix and compliance roadmap.
             </div>
             {goToIndex && (
-              <button onClick={() => goToIndex(3)} className="mt-4 mono text-[10px] text-paper/50 hover:text-cyan uppercase tracking-[0.2em] transition-colors">
+              <button onClick={() => goToIndex(2)} className="mt-4 mono text-[10px] text-paper/50 hover:text-cyan uppercase tracking-[0.2em] transition-colors">
                 ← Back to Directory
               </button>
             )}

@@ -39,7 +39,7 @@ export function Page04Hunting({ goToIndex }: { goToIndex?: (i: number) => void }
               Open dossier: neural signature of a live intrusion, ATT&CK-mapped.
             </div>
             {goToIndex && (
-              <button onClick={() => goToIndex(3)} className="mt-4 mono text-[10px] text-paper/50 hover:text-cyan uppercase tracking-[0.2em] transition-colors">
+              <button onClick={() => goToIndex(2)} className="mt-4 mono text-[10px] text-paper/50 hover:text-cyan uppercase tracking-[0.2em] transition-colors">
                 ← Back to Directory
               </button>
             )}
