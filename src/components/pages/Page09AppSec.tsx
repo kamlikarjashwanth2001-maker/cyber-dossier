@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
-import dossier from "@/assets/p4-dossier.jpg";
+import analysts from "@/assets/p2-analysts.jpg";
 
 const PROCESS = [
-  { n: "01", t: "HYPOTHESIS", d: "Formulate an adversary hypothesis grounded in ATT&CK TTPs." },
-  { n: "02", t: "COLLECT", d: "Enrich endpoint, identity, cloud and network telemetry." },
-  { n: "03", t: "HUNT", d: "Query, correlate, pivot. Question every anomaly." },
-  { n: "04", t: "CONFIRM", d: "Validate scope; escalate to Incident Response." },
+  { n: "01", t: "REVIEW", d: "Deep manual code review targeting business logic flaws." },
+  { n: "02", t: "SAST/DAST", d: "Automated analysis integrated into your CI/CD pipeline." },
+  { n: "03", t: "MODEL", d: "Threat modeling architecture before code is even written." },
+  { n: "04", t: "SECURE", d: "Developer-first remediation guidance and secure SDLC." },
 ];
 
-export function Page04Hunting({ goToIndex }: { goToIndex?: (i: number) => void }) {
+export function Page09AppSec({ goToIndex }: { goToIndex?: (i: number) => void }) {
   return (
     <div className="relative w-full h-full bg-void overflow-hidden">
-      <div className="absolute inset-0 grid grid-cols-2">
+      <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2">
         <motion.img
-          src={dossier}
-          alt="Classified dossier open"
+          src={analysts}
+          alt="Application Security Analysts"
           width={1600}
           height={1800}
           loading="lazy"
           initial={{ x: -60, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 0.9 }}
+          whileInView={{ x: 0, opacity: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="w-full h-full object-cover"
         />
-        <div className="bg-panel bp-grid-fine relative">
+        <div className="hidden md:block bg-panel bp-grid-fine relative">
           <div className="absolute top-6 right-6 mono text-[9px] tracking-[0.35em] text-danger">
             ◆ CLASSIFIED / EYES ONLY
           </div>
@@ -32,11 +32,11 @@ export function Page04Hunting({ goToIndex }: { goToIndex?: (i: number) => void }
       </div>
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 h-full">
-        <div className="flex items-end p-8 md:p-16">
-          <div className="glass p-4 max-w-xs">
-            <div className="mono text-[9px] text-cyan tracking-[0.35em]">EXHIBIT A</div>
+        <div className="hidden md:flex items-end p-8 md:p-16">
+          <div className="glass p-4 max-w-xs bg-void/50 backdrop-blur-md">
+            <div className="mono text-[9px] text-cyan tracking-[0.35em]">EXHIBIT E</div>
             <div className="text-paper/80 text-sm mt-2">
-              Open dossier: neural signature of a live intrusion, ATT&CK-mapped.
+              Source code static analysis detecting a critical zero-day vulnerability.
             </div>
             {goToIndex && (
               <button onClick={() => goToIndex(3)} className="mt-4 mono text-[10px] text-paper/50 hover:text-cyan uppercase tracking-[0.2em] transition-colors">
@@ -46,23 +46,23 @@ export function Page04Hunting({ goToIndex }: { goToIndex?: (i: number) => void }
           </div>
         </div>
 
-        <div className="p-8 md:p-16 flex flex-col justify-center">
+        <div className="p-8 md:p-16 flex flex-col justify-center bg-void/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none">
           <div className="mono text-[10px] uppercase tracking-[0.35em] text-cyan">
-            04 — Discipline
+            09 — Discipline
           </div>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
             className="display text-[clamp(2.4rem,5.6vw,5.6rem)] leading-[0.95] font-semibold mt-3"
           >
-            Threat<br />
-            <span className="text-cyan">Hunting.</span>
+            Application<br />
+            <span className="text-cyan">Security.</span>
           </motion.h2>
 
           <p className="mt-4 max-w-md text-paper/70 text-sm leading-relaxed">
-            We assume compromise. Then we prove it — or clear it. Every hunt is a scientific
-            question against your telemetry.
+            We help you build secure software from the ground up. Identifying business logic flaws, API vulnerabilities, and integrating security seamlessly into your deployment pipelines.
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-3">
@@ -70,9 +70,10 @@ export function Page04Hunting({ goToIndex }: { goToIndex?: (i: number) => void }
               <motion.div
                 key={p.n}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: 0.4 + i * 0.12 }}
-                className="border border-line/60 bg-void/40 p-3"
+                className="border border-line/60 bg-void/60 md:bg-void/40 p-3 backdrop-blur-md"
               >
                 <div className="flex items-baseline gap-2">
                   <span className="mono text-[9px] text-cyan">{p.n}</span>
@@ -84,7 +85,7 @@ export function Page04Hunting({ goToIndex }: { goToIndex?: (i: number) => void }
           </div>
 
           <div className="mt-6 flex flex-wrap gap-2 mono text-[9px] uppercase tracking-[0.3em] text-paper/60">
-            {["MITRE ATT&CK", "IOCs", "IOA", "Sigma", "YARA", "KQL / SPL", "OSQuery"].map((t) => (
+            {["SAST", "DAST", "API SECURITY", "OWASP TOP 10", "SECURE SDLC", "THREAT MODELING"].map((t) => (
               <span key={t} className="px-2 py-1 border border-cyan/30 text-cyan/80">
                 {t}
               </span>

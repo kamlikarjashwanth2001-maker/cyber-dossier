@@ -128,7 +128,7 @@ export function Magazine() {
             }}
           >
             <div className="relative w-full h-full overflow-hidden bg-void grain scanlines vignette">
-              <Page />
+              <Page goToIndex={(i: number) => setIndex([i, i > index ? 1 : -1])} />
             </div>
           </motion.div>
         </AnimatePresence>
