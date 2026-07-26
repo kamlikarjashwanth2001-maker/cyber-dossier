@@ -66,24 +66,20 @@ export function Page01Cover() {
                 <div className="w-2 h-2 bg-cyan rounded-full animate-pulse shadow-[0_0_10px_rgba(0,216,255,1)]" />
               </div>
 
-              <div className="flex flex-col items-center gap-1 mb-10 text-center">
-                <div className="mono text-cyan text-[11px] tracking-[0.3em] uppercase mb-4">
-                  Encrypted Channel Verified
-                </div>
-                <div className="text-paper/70 text-[10px] md:text-[11px] mono uppercase tracking-widest leading-relaxed">
+              <div className="flex flex-col items-center gap-2 mb-10 text-center">
+                <div className="text-paper/90 text-xs md:text-sm mono uppercase tracking-widest leading-relaxed font-semibold">
                   Every system has a weakness.<br/>
-                  Every attack leaves a trace.<br/>
-                  <span className="text-cyan">The hunt begins here.</span>
+                  Every attack leaves a trace.
                 </div>
               </div>
               
               <button
                 onClick={handleStart}
-                className="group relative overflow-hidden border border-cyan/50 bg-cyan/5 px-10 py-4 text-cyan mono tracking-[0.4em] uppercase text-xs transition-all duration-500 hover:bg-cyan/20 hover:shadow-[0_0_30px_rgba(0,216,255,0.5)]"
+                className="group relative overflow-hidden border border-cyan/50 bg-cyan/5 px-10 py-4 text-cyan mono tracking-[0.3em] uppercase text-sm md:text-base transition-all duration-500 hover:bg-cyan/20 hover:shadow-[0_0_30px_rgba(0,216,255,0.5)]"
               >
                 <div className="absolute inset-0 w-0 bg-cyan/20 transition-all duration-500 ease-out group-hover:w-full" />
-                <span className="relative z-10 font-semibold drop-shadow-[0_0_8px_rgba(0,216,255,0.8)] group-hover:text-white transition-colors">
-                  INITIALIZE DOSSIER
+                <span className="relative z-10 font-bold drop-shadow-[0_0_8px_rgba(0,216,255,0.8)] group-hover:text-white transition-colors">
+                  THE HUNT BEGINS HERE
                 </span>
               </button>
             </div>
