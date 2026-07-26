@@ -18,13 +18,15 @@ export function Page12Consulting({ goToIndex }: { goToIndex?: (i: number) => voi
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <motion.img 
-          src={consultingImg} 
-          alt="Consulting" 
-          className="w-full h-full object-cover grayscale-[50%] opacity-60"
-          animate={{ scale: [1.05, 1.15] }}
-          transition={{ duration: 30, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-        />
+        <div className="absolute inset-0 scale-x-[-1]">
+          <motion.img 
+            src={consultingImg} 
+            alt="Consulting" 
+            className="w-full h-full object-cover grayscale-[50%] opacity-60"
+            animate={{ scale: [1.05, 1.15] }}
+            transition={{ duration: 30, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-void/90 via-void/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-void via-void/10 to-transparent" />
         <div className="absolute inset-0 bp-grid-fine opacity-20 mix-blend-overlay" />
