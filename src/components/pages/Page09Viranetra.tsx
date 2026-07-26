@@ -98,29 +98,58 @@ export function Page09Viranetra() {
           </motion.div>
         </div>
 
-        {/* Right Side Image (Unchanged) */}
+        {/* Right Side Image with Chakra Animation */}
         <div className="md:col-span-7 relative flex items-center justify-center">
-          <motion.img
-            src={viranetra}
-            alt="Viranetra 3D holographic dashboard"
-            width={1600}
-            height={1800}
-            loading="lazy"
-            initial={{ opacity: 0, scale: 0.85, rotate: -6 }}
-            animate={{ opacity: 0.95, scale: 1, rotate: 0 }}
-            transition={{ duration: 1.4, ease: "easeOut" }}
-            className="max-w-full max-h-full object-contain"
-            style={{ filter: "drop-shadow(0 0 60px rgba(0,216,255,0.35))" }}
-          />
-          
           <motion.div
-            animate={{ rotate: 360 }}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 0.95, scale: 1 }}
+            transition={{ duration: 1.4, ease: "easeOut" }}
+            className="relative w-full max-w-[800px] aspect-[16/18] flex items-center justify-center"
+            style={{ filter: "drop-shadow(0 0 60px rgba(0,216,255,0.4))" }}
+          >
+            {/* 1. Outer Static Layer (Text Boxes) */}
+            <div 
+              className="absolute inset-0"
+              style={{
+                WebkitMaskImage: "radial-gradient(circle 26.5cqw at 50% 49%, transparent 99%, black 100%)",
+                maskImage: "radial-gradient(circle 26.5cqw at 50% 49%, transparent 99%, black 100%)",
+                containerType: 'inline-size'
+              }}
+            >
+              <img
+                src={viranetra}
+                alt="Viranetra Outer"
+                className="w-full h-full object-contain pointer-events-none"
+              />
+            </div>
+
+            {/* 2. Inner Spinning Chakra Layer */}
+            <div 
+              className="absolute inset-0"
+              style={{
+                WebkitMaskImage: "radial-gradient(circle 26.5cqw at 50% 49%, black 99%, transparent 100%)",
+                maskImage: "radial-gradient(circle 26.5cqw at 50% 49%, black 99%, transparent 100%)",
+                containerType: 'inline-size'
+              }}
+            >
+              <motion.img
+                src={viranetra}
+                alt="Viranetra Inner Chakra"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                className="w-full h-full object-contain pointer-events-none origin-[50%_49%]"
+              />
+            </div>
+          </motion.div>
+
+          {/* SVG Rings for extra effect */}
+          <motion.div
+            animate={{ rotate: -360 }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             className="absolute inset-0 pointer-events-none opacity-30 flex items-center justify-center"
           >
             <svg viewBox="0 0 400 400" className="w-[80%] h-[80%] max-w-[600px]">
-              <circle cx="200" cy="200" r="180" fill="none" stroke="#00D8FF" strokeDasharray="2 6" />
-              <circle cx="200" cy="200" r="140" fill="none" stroke="#00D8FF" strokeDasharray="1 4" />
+              <circle cx="200" cy="200" r="190" fill="none" stroke="#00D8FF" strokeDasharray="1 10" strokeWidth="2" />
             </svg>
           </motion.div>
 
