@@ -98,85 +98,28 @@ export function Page09Viranetra() {
           </motion.div>
         </div>
 
-        {/* Right Side Image with Chakra Animation and Text Overlays */}
+        {/* Right Side Image (Unchanged) */}
         <div className="md:col-span-7 relative flex items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 0.95, scale: 1 }}
+          <motion.img
+            src={viranetra}
+            alt="Viranetra 3D holographic dashboard"
+            width={1600}
+            height={1800}
+            loading="lazy"
+            initial={{ opacity: 0, scale: 0.85, rotate: -6 }}
+            animate={{ opacity: 0.95, scale: 1, rotate: 0 }}
             transition={{ duration: 1.4, ease: "easeOut" }}
-            className="relative w-full max-w-[800px] aspect-[16/18] flex items-center justify-center"
-            style={{ filter: "drop-shadow(0 0 60px rgba(0,216,255,0.4))" }}
-          >
-            {/* 1. Outer Static Layer (Text Boxes) */}
-            <div 
-              className="absolute inset-0"
-              style={{
-                WebkitMaskImage: "radial-gradient(ellipse 32% 28% at 50% 49%, transparent 99%, black 100%)",
-                maskImage: "radial-gradient(ellipse 32% 28% at 50% 49%, transparent 99%, black 100%)"
-              }}
-            >
-              <img
-                src={viranetra}
-                alt="Viranetra Outer"
-                className="w-full h-full object-contain pointer-events-none"
-              />
-            </div>
-
-            {/* 2. Inner Spinning Chakra Layer */}
-            <div 
-              className="absolute inset-0"
-              style={{
-                WebkitMaskImage: "radial-gradient(ellipse 32% 28% at 50% 49%, black 99%, transparent 100%)",
-                maskImage: "radial-gradient(ellipse 32% 28% at 50% 49%, black 99%, transparent 100%)"
-              }}
-            >
-              <motion.img
-                src={viranetra}
-                alt="Viranetra Inner Chakra"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="w-full h-full object-contain pointer-events-none origin-[50%_49%]"
-              />
-            </div>
-
-            {/* 3. Text Overlays to replace the gibberish names */}
-            {[
-              { name: "VIRA Cortex", top: "25.5%", left: "50%", rot: 0, w: "22%", h: "8.5%" },
-              { name: "Netra Scan", top: "32%", left: "73%", rot: 25, w: "20%", h: "8.5%" },
-              { name: "VIRA Forensic", top: "51.5%", left: "82.5%", rot: 0, w: "18%", h: "9%" },
-              { name: "Netra Respond", top: "72%", left: "74%", rot: -28, w: "22%", h: "9%" },
-              { name: "Vira Playbook", top: "81%", left: "50.5%", rot: 0, w: "18%", h: "7.5%" },
-              { name: "VIRA Maya", top: "73%", left: "27.5%", rot: 30, w: "21%", h: "9%" },
-              { name: "Predictive Defense", top: "52%", left: "18.5%", rot: 0, w: "18%", h: "8%" },
-              { name: "SOC Intel", top: "33%", left: "28%", rot: -28, w: "21%", h: "9%" },
-            ].map((box, i) => (
-              <div
-                key={i}
-                className="absolute flex items-center justify-center bg-[#01090d] border-[0.5px] border-cyan/20 rounded-[3px] shadow-[0_0_15px_rgba(0,216,255,0.15)] overflow-hidden"
-                style={{
-                  top: box.top,
-                  left: box.left,
-                  width: box.w,
-                  height: box.h,
-                  transform: `translate(-50%, -50%) rotate(${box.rot}deg)`
-                }}
-              >
-                <div className="absolute inset-0 bg-cyan/5"></div>
-                <span className="relative z-10 text-[0.6rem] sm:text-xs md:text-sm font-mono font-bold text-cyan uppercase tracking-widest text-center px-2 shadow-cyan/50 drop-shadow-md">
-                  {box.name}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* SVG Rings for extra effect */}
+            className="max-w-full max-h-full object-contain"
+            style={{ filter: "drop-shadow(0 0 60px rgba(0,216,255,0.35))" }}
+          />
           <motion.div
-            animate={{ rotate: -360 }}
+            animate={{ rotate: 360 }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             className="absolute inset-0 pointer-events-none opacity-30 flex items-center justify-center"
           >
             <svg viewBox="0 0 400 400" className="w-[80%] h-[80%] max-w-[600px]">
-              <circle cx="200" cy="200" r="190" fill="none" stroke="#00D8FF" strokeDasharray="1 10" strokeWidth="2" />
+              <circle cx="200" cy="200" r="180" fill="none" stroke="#00D8FF" strokeDasharray="2 6" />
+              <circle cx="200" cy="200" r="140" fill="none" stroke="#00D8FF" strokeDasharray="1 4" />
             </svg>
           </motion.div>
 
