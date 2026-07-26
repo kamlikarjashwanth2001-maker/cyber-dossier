@@ -47,17 +47,42 @@ export function Page01Cover() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-void/60 backdrop-blur-sm"
+            className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-void/80 backdrop-blur-md"
           >
-            <div className="mono text-cyan text-xs tracking-[0.2em] uppercase mb-6 drop-shadow-[0_0_8px_rgba(0,216,255,0.8)]">
-              Secure Connection Established
+            {/* Cyber Scanning Line */}
+            <motion.div
+              animate={{ top: ["0%", "100%", "0%"] }}
+              transition={{ duration: 4, ease: "linear", repeat: Infinity }}
+              className="absolute left-0 right-0 h-[2px] bg-cyan/40 shadow-[0_0_10px_rgba(0,216,255,0.8)] z-0 pointer-events-none opacity-50"
+            />
+            
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full border border-cyan/30 flex items-center justify-center mb-8 relative">
+                <motion.div 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 10, ease: "linear", repeat: Infinity }}
+                  className="absolute inset-0 rounded-full border-t-2 border-cyan/60"
+                />
+                <div className="w-2 h-2 bg-cyan rounded-full animate-pulse shadow-[0_0_10px_rgba(0,216,255,1)]" />
+              </div>
+
+              <div className="mono text-cyan text-[10px] tracking-[0.4em] uppercase mb-2">
+                Encrypted Channel Verified
+              </div>
+              <div className="text-paper/40 text-[9px] mono uppercase tracking-widest mb-10">
+                Awaiting clearance protocol
+              </div>
+              
+              <button
+                onClick={handleStart}
+                className="group relative overflow-hidden border border-cyan/50 bg-cyan/5 px-10 py-4 text-cyan mono tracking-[0.4em] uppercase text-xs transition-all duration-500 hover:bg-cyan/20 hover:shadow-[0_0_30px_rgba(0,216,255,0.5)]"
+              >
+                <div className="absolute inset-0 w-0 bg-cyan/20 transition-all duration-500 ease-out group-hover:w-full" />
+                <span className="relative z-10 font-semibold drop-shadow-[0_0_8px_rgba(0,216,255,0.8)] group-hover:text-white transition-colors">
+                  INITIALIZE DOSSIER
+                </span>
+              </button>
             </div>
-            <button
-              onClick={handleStart}
-              className="border border-cyan/40 bg-cyan/10 hover:bg-cyan/20 px-8 py-3 text-cyan mono tracking-[0.3em] uppercase text-sm transition-all duration-300 shadow-[0_0_15px_rgba(0,216,255,0.2)] hover:shadow-[0_0_25px_rgba(0,216,255,0.4)]"
-            >
-              ACCESS DOSSIER
-            </button>
           </motion.div>
         )}
 
@@ -95,6 +120,14 @@ export function Page01Cover() {
                 />
               </motion.div>
               
+              <motion.div
+                 initial={{ opacity: 0, y: -10 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ delay: 0.7, duration: 1 }}
+                 className="mono text-cyan text-[10px] tracking-[0.4em] uppercase mb-4 opacity-80"
+              >
+                 Welcome to
+              </motion.div>
               <motion.div 
                 initial={{ opacity: 0, letterSpacing: "0.1em" }}
                 animate={{ opacity: 1, letterSpacing: "0.4em" }}
