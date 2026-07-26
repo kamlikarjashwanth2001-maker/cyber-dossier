@@ -204,10 +204,25 @@ export function Page01Cover() {
                     {i === 4 && <span className="text-cyan">.</span>}
                   </motion.h1>
                 ))}
+                
+                <div className="mt-8 mb-6 flex flex-col gap-2 border-l-2 border-cyan/40 pl-6">
+                  {["Every system has a weakness.", "Every attack leaves a trace.", "The hunt begins here."].map((line, i) => (
+                    <motion.p
+                      key={line}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.2 + i * 0.3, duration: 0.8 }}
+                      className="text-paper/80 mono text-sm md:text-base tracking-widest uppercase"
+                    >
+                      {line}
+                    </motion.p>
+                  ))}
+                </div>
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.4, duration: 0.8 }}
+                  transition={{ delay: 2.2, duration: 0.8 }}
                   className="mt-8 flex flex-wrap gap-x-6 gap-y-2 mono text-[11px] uppercase tracking-[0.25em] text-paper/70"
                 >
                   <span>Elite Threat Hunting</span>
