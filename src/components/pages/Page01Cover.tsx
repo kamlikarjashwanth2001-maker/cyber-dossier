@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import cover from "@/assets/p1-eye.jpg";
-import logoPlaceholder from "@/assets/logo.png.jpeg";
-import introAudio from "@/assets/intro.mp3.mpeg";
+import logoPlaceholder from "@/assets/logo.jpeg";
+import introAudio from "@/assets/intro.mpeg";
 
 export function Page01Cover() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
