@@ -66,11 +66,15 @@ export function Page01Cover() {
                 <div className="w-2 h-2 bg-cyan rounded-full animate-pulse shadow-[0_0_10px_rgba(0,216,255,1)]" />
               </div>
 
-              <div className="mono text-cyan text-[10px] tracking-[0.4em] uppercase mb-2">
-                Encrypted Channel Verified
-              </div>
-              <div className="text-paper/40 text-[9px] mono uppercase tracking-widest mb-10">
-                Awaiting clearance protocol
+              <div className="flex flex-col items-center gap-1 mb-10 text-center">
+                <div className="mono text-cyan text-[11px] tracking-[0.3em] uppercase mb-4">
+                  Encrypted Channel Verified
+                </div>
+                <div className="text-paper/70 text-[10px] md:text-[11px] mono uppercase tracking-widest leading-relaxed">
+                  Every system has a weakness.<br/>
+                  Every attack leaves a trace.<br/>
+                  <span className="text-cyan">The hunt begins here.</span>
+                </div>
               </div>
               
               <button
