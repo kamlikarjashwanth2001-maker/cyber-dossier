@@ -22,7 +22,7 @@ export function Page12Consulting({ goToIndex }: { goToIndex?: (i: number) => voi
           <motion.img 
             src={consultingImg} 
             alt="Consulting" 
-            className="w-full h-full object-cover object-top grayscale-[50%] opacity-60"
+            className="w-full h-full object-cover object-[center_25%] grayscale-[50%] opacity-60"
             animate={{ scale: [1.05, 1.15] }}
             transition={{ duration: 30, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
           />
