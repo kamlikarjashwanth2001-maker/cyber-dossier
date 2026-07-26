@@ -98,55 +98,20 @@ export function Page09Viranetra() {
           </motion.div>
         </div>
 
-        {/* Right Side Image with Text Overlays */}
+        {/* Right Side Image (Unchanged) */}
         <div className="md:col-span-7 relative flex items-center justify-center">
-          <motion.div
+          <motion.img
+            src={viranetra}
+            alt="Viranetra 3D holographic dashboard"
+            width={1600}
+            height={1800}
+            loading="lazy"
             initial={{ opacity: 0, scale: 0.85, rotate: -6 }}
             animate={{ opacity: 0.95, scale: 1, rotate: 0 }}
             transition={{ duration: 1.4, ease: "easeOut" }}
-            className="relative w-full max-w-[800px] aspect-[16/18]"
-            style={{ filter: "drop-shadow(0 0 60px rgba(0,216,255,0.35))", containerType: 'inline-size' }}
-          >
-            <img
-              src={viranetra}
-              alt="Viranetra 3D holographic dashboard"
-              className="absolute inset-0 w-full h-full object-contain pointer-events-none"
-            />
-            
-            {/* 8 Frosted Glass Overlays to cover original text */}
-            {[
-              "VIRA Cortex", "Netra Scan", "VIRA Forensic", "Netra Respond",
-              "Vira Playbook", "VIRA Maya", "Predictive Defense", "SOC Intel"
-            ].map((feature, i) => {
-              const angleRad = ((i * (360 / 8)) - 90) * (Math.PI / 180);
-              const radiusX = 27.5; // % of container width
-              const radiusY = 24.5; // % of container height
-              const left = 50 + Math.cos(angleRad) * radiusX;
-              const top = 50.5 + Math.sin(angleRad) * radiusY;
-              
-              // Angle the boxes slightly to match the 3D perspective of the image
-              let rotate = 0;
-              if (i === 1 || i === 2 || i === 3) rotate = 12;
-              if (i === 5 || i === 6 || i === 7) rotate = -12;
-              if (i === 0 || i === 4) rotate = 0;
-
-              return (
-                <div
-                  key={feature}
-                  className="absolute w-[18%] h-[7%] -translate-x-1/2 -translate-y-1/2 backdrop-blur-xl bg-[#04121a]/95 border border-cyan/30 flex items-center justify-center shadow-[0_0_15px_rgba(0,216,255,0.2)] rounded-[2px]"
-                  style={{ 
-                    left: `${left}%`, 
-                    top: `${top}%`,
-                    transform: `translate(-50%, -50%) rotate(${rotate}deg)`
-                  }}
-                >
-                   <span className="text-[2.2cqw] leading-none font-mono font-bold text-cyan text-center uppercase tracking-widest drop-shadow-[0_0_5px_rgba(0,216,255,0.8)]">
-                     {feature}
-                   </span>
-                </div>
-              );
-            })}
-          </motion.div>
+            className="max-w-full max-h-full object-contain"
+            style={{ filter: "drop-shadow(0 0 60px rgba(0,216,255,0.35))" }}
+          />
           
           <motion.div
             animate={{ rotate: 360 }}
