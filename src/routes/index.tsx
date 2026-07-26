@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Magazine } from "@/components/Magazine";
-import { SplashScreen } from "@/components/SplashScreen";
-import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -26,12 +24,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [hasEntered, setHasEntered] = useState(false);
-
-  return (
-    <>
-      {!hasEntered && <SplashScreen onComplete={() => setHasEntered(true)} />}
-      <Magazine />
-    </>
-  );
+  return <Magazine />;
 }
