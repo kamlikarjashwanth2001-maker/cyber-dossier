@@ -98,75 +98,38 @@ export function Page09Viranetra() {
           </motion.div>
         </div>
 
-        {/* Right Side Dynamic Circular UI */}
-        <div className="md:col-span-7 relative flex items-center justify-center min-h-[500px] overflow-hidden">
-          
-          {/* Animated SVG Rings */}
+        {/* Right Side Image (Unchanged) */}
+        <div className="md:col-span-7 relative flex items-center justify-center">
+          <motion.img
+            src={viranetra}
+            alt="Viranetra 3D holographic dashboard"
+            width={1600}
+            height={1800}
+            loading="lazy"
+            initial={{ opacity: 0, scale: 0.85, rotate: -6 }}
+            animate={{ opacity: 0.95, scale: 1, rotate: 0 }}
+            transition={{ duration: 1.4, ease: "easeOut" }}
+            className="max-w-full max-h-full object-contain"
+            style={{ filter: "drop-shadow(0 0 60px rgba(0,216,255,0.35))" }}
+          />
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-50"
+            className="absolute inset-0 pointer-events-none opacity-30"
           >
-            <svg viewBox="0 0 800 800" className="w-[150%] h-[150%] max-w-[900px] max-h-[900px]">
-              <circle cx="400" cy="400" r="320" fill="none" stroke="#00D8FF" strokeWidth="1" strokeDasharray="4 12" opacity="0.4" />
-              <circle cx="400" cy="400" r="260" fill="none" stroke="#00D8FF" strokeWidth="2" strokeDasharray="2 6" opacity="0.7" />
-              <circle cx="400" cy="400" r="180" fill="none" stroke="#00D8FF" strokeWidth="1" strokeDasharray="1 4" opacity="0.5" />
-              <circle cx="400" cy="400" r="100" fill="none" stroke="#00D8FF" strokeWidth="1" opacity="0.3" />
+            <svg viewBox="0 0 400 400" className="w-full h-full">
+              <circle cx="200" cy="200" r="180" fill="none" stroke="#00D8FF" strokeDasharray="2 6" />
+              <circle cx="200" cy="200" r="140" fill="none" stroke="#00D8FF" strokeDasharray="1 4" />
             </svg>
           </motion.div>
-
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40"
-          >
-             <svg viewBox="0 0 800 800" className="w-[140%] h-[140%] max-w-[800px] max-h-[800px]">
-              <circle cx="400" cy="400" r="350" fill="none" stroke="#00D8FF" strokeWidth="1" strokeDasharray="1 10" />
-              <circle cx="400" cy="400" r="220" fill="none" stroke="#00D8FF" strokeWidth="4" strokeDasharray="1 20" opacity="0.6" />
-            </svg>
-          </motion.div>
-
-          {/* Central Core */}
-          <div className="absolute z-20 w-24 h-24 bg-void border border-cyan/50 rounded-full shadow-[0_0_40px_rgba(0,216,255,0.5)] flex items-center justify-center">
-             <div className="w-12 h-12 bg-cyan rounded-full animate-pulse shadow-[0_0_30px_rgba(0,216,255,1)]" />
-          </div>
-
-          {/* Feature Nodes */}
-          {[
-            "VIRA Cortex", "Netra Scan", "VIRA Forensic", "Netra Respond",
-            "Vira Playbook", "VIRA Maya", "Predictive Defense", 
-            "SOC Intelligence", "Event Logs", "Reports", "Assets"
-          ].map((feature, i, arr) => {
-            const angle = (i * (360 / arr.length)) - 90;
-            return (
-              <motion.div
-                key={feature}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5 + i * 0.1, duration: 0.8, type: "spring" }}
-                className="absolute z-30 flex items-center justify-center"
-                style={{
-                  transform: `rotate(${angle}deg) translate(min(28vw, 260px)) rotate(${-angle}deg)`
-                }}
-              >
-                <div className="relative group">
-                   <div className="bg-void/90 backdrop-blur-md border border-cyan/50 px-4 py-2.5 rounded shadow-[0_0_15px_rgba(0,216,255,0.2)] group-hover:border-cyan group-hover:bg-cyan/10 group-hover:shadow-[0_0_30px_rgba(0,216,255,0.6)] transition-all cursor-default text-center">
-                     <div className="mono text-[9px] xl:text-[10px] text-cyan font-bold tracking-widest uppercase whitespace-nowrap">
-                       {feature}
-                     </div>
-                   </div>
-                </div>
-              </motion.div>
-            );
-          })}
 
           {/* corner metrics */}
-          <div className="absolute top-4 right-4 glass p-3 mono text-[9px] tracking-[0.25em] text-paper/70 z-40">
+          <div className="absolute top-4 right-4 glass p-3 mono text-[9px] tracking-[0.25em] text-paper/70">
             <div className="text-cyan">◉ AI CORE</div>
             <div className="mt-1">Status: NOMINAL</div>
             <div>Uptime: 99.997%</div>
           </div>
-          <div className="absolute bottom-4 left-4 glass p-3 mono text-[9px] tracking-[0.25em] text-paper/70 z-40">
+          <div className="absolute bottom-4 left-4 glass p-3 mono text-[9px] tracking-[0.25em] text-paper/70">
             <div className="text-cyan">TELEMETRY</div>
             <div className="mt-1">2.4B events / day</div>
           </div>
